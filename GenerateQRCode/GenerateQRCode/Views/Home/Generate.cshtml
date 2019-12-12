@@ -1,11 +1,9 @@
 ﻿
 @{
     ViewBag.Title = "Generate";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@{
-    Layout = null;
-}
 
 <!DOCTYPE html>
 
@@ -14,11 +12,16 @@
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
 </head>
+
 <body>
+    <br/>
+    <br />
+    <br />
     @using (Html.BeginForm("Generate", "Home", FormMethod.Post))
     {
-        <input type="text" name="qrcode" />
-        <input type="submit" value="Generate" />
+        <input type="text" name="qrcode" class="form-control"/>
+       
+        <input type="submit" value="Generate" class="btn btn-success" />
     }
     <hr />
     @if (ViewBag.QRCodeImage != null)
@@ -28,3 +31,6 @@
 </body>
 </html>
 
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/Site.css" rel="stylesheet" />
